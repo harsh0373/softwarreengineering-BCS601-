@@ -1,0 +1,192 @@
+{% extends "parent2.html" %}
+{% load static %}
+{% block main3  %}
+{% if messages %}
+  {% for msg in messages %}
+
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Hey bro!</strong> {{msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  {%  endfor %}
+  
+
+{%  endif %}
+
+
+<div class="row p-0 " style="min-height: 100%; background-color:#192f59; ;">
+    <img src="{% static 'images/pp5.jpg'%}" class="d-block w-100 " alt="..." height="800px" style="padding: 0px; opacity: 0.5;">
+
+</div>
+
+<nav class="navbar  ">
+    <div class="container-fluid  " style="background-color: #192f59;">
+      
+    </div>
+  </nav>
+
+
+<div class="row">
+    <img src="{% static 'images/con2t.png'%}" class=" " alt="..." height="350vh" width="1200vh" style="padding: 0px;">
+
+</div>
+<nav class="navbar ">
+    <div class="container-fluid  " style="background-color: #192f59;">
+     
+    </div>
+  </nav>
+
+
+   
+
+<div class="container-fluid m-0 p-0 text-center">
+<div class="row " style="background-color:#161616 ;min-height: 280px; color: white;">
+    <div class="col-1 ms-4"></div>
+    <div class="col-3 mt-4  p-2 fs-3">
+        <div class="container mt-2"><b class="fs-2"><i class="fa-solid fa-phone"></i></b></div>
+        <div class="container mt-2"> <b>Phone</b></div>
+        <div class="container mt-3"><p class="" style="font-size: 13px;">A wonderful serenity has taken <br> possession of my entire soul, like these.</p></div>
+        <div class="container fs-5"><p style="color: #38a55e;">+1-2345-2345</p></div>
+    </div>
+    <div class="col-3 mt-3 ms-4 p-2 fs-3">
+        <div class="container mt-2 "><b class="fs-2"><i class="fa-regular fa-envelope"></i></b></div>
+        <div class="container mt-2 "><b>Email</b></div>
+        <div class="container mt-3 "><p class="" style="font-size: 13px;">A wonderful serenity has taken <br> possession of my entire soul, like these.</p></div>
+        <div class="container fs-5"><p style="color: #38a55e;">Contac@nalnda.com</p></div>
+    </div>
+   
+
+    <div class="col-3 mt-3 ms-4 p-2 fs-3">
+        <div class="container mt-2"><b class="fs-2"><i  class="fa-solid fa-location-dot"></i></b></div>
+        <div class="container mt-2"><b>Location</b></div>
+        <div class="container mt-3"><p class="" style="font-size: 13px;">4 apt. Flawing Street. The Grand <br> Avenue.
+            Liverpool, UK 33342</p></div>
+        <div class="container fs-5"><p style="color: #38a55e;">View On Googlemap</p></div>
+    
+    
+    </div>
+
+    
+
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="container-fluid w-50 mb-5 pb-5" >
+    <div class="row text-center">
+    <h2 style="  padding: 10px 0;" class="mt-4 ">Leave Us Your Info</h3>
+        <b >AND WE WILL GET BACK TO YOU.</b></div>
+<div class="row mb-5">
+<form id="enqform" action="{% url 'nouapp:contactus' %}" class="form-group mt-2 rounded-3" method="post" onsubmit="event.preventDefault();validate();" >
+    {% csrf_token %}
+    <table class="table " style="width: 100%; margin: auto;" >
+        <tr>
+            <td class="">Enter Name</td>
+            <td class=""><input type="text" name="name" id="name" class="form-control border-1    border-secondary"> </td>
+        </tr>
+        <tr>
+            <td>Select Gender</td>
+            <td><input type="radio" name="gender" id="" value="Male" class="form-check-input border-1 border-dark ">Male 
+                <input type="radio" name="gender" id="" value="Female" class="form-check-input border-1 border-secondary">Female
+            </td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><textarea name="address" id=""  class="form-control border-1 border-secondary"></textarea> </td>
+        </tr>
+        <tr>
+            <td>Enter Contact No.</td>
+            <td><input type="number" name="number" id="contactno" class="form-control border-1 border-secondary"> </td>
+        </tr>
+        <tr>
+            <td>Enter Email Address</td>
+            <td><input type="text" name="emailaddress" id="email" class="form-control border-1 border-secondary"> </td>
+        </tr>
+        <tr>
+            <td>Enter Enquiry</td>
+            <td><textarea name="enquirytext" id="" class="form-control border-1 border-secondary"></textarea> </td>
+        </tr>
+
+    </table>
+    <div class="d-grid block-2  mt-3" style="margin: auto;" >
+         <td style="column-span: 2;"><button type="submit" class="btn btn-success" >Submit</button> </td></div>
+</form>
+</div>
+</div>
+
+<script>
+    function validate()
+    {
+        let name=document.getElementById("name");
+        let contactno=document.getElementById("contactno");
+        let email=document.getElementById("email");
+        
+        let emailexp=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(name.value=="" || name.value==null)
+        {
+            alert("Enter Name First!")
+            name.focus();
+
+        }
+        else if(contactno.value=="" ||  contactno.value==null)
+        {
+            alert("Enter Your Number Please!")
+            name.focus();
+        }
+        else if(isNaN(contactno.value))
+        {
+
+            alert("Please Enter Valid Number")
+            contactno.focus()
+        }
+        else if(contactno.value.length != 10)
+        {
+
+            alert("Only 10 digits Number Allowed")
+            contactno.focus()
+        }
+        else if(email.value =="" || email.value==null)
+        {
+
+            alert("Enter Your Emailaddress")
+            email.focus()
+        }
+        else if(!emailexp.test(email.value))
+        {
+
+            alert("Enter Valid Emailaddress")
+            email.focus()
+        }
+        else
+        {
+            document.getElementById("enqform").submit();
+
+
+
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+</script>
+            
+
+{% endblock main3  %}

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOU E-Gyan portal</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/bootstrap.bundle.js'  %}"> </script>
+    <script src="{% static 'js/script.js'  %}"> </script>
+
+
+
+<style>
+
+
+.modal-box{ font-family: 'Poppins', sans-serif; }
+.show-modal{
+    color: #fff;
+    background: linear-gradient(to right, #33a3ff, #0675cf, #49a6fd);
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 10px 15px;
+    margin: 200px auto 0;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+.show-modal:hover,
+.show-modal:focus{
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    outline: none;
+}
+.modal-dialog{
+    width: 400px;
+    margin: 70px auto 0;
+}
+.modal-dialog{ transform: scale(0.5); }
+.modal-dialog{ transform: scale(1); }
+.modal-dialog .modal-content{
+    text-align: center;
+    border: none;
+}
+.modal-content .close{
+    color: #fff;
+    background: linear-gradient(to right, #33a3ff, #0675cf, #4cd5ff);
+    font-size: 25px;
+    font-weight: 400;
+    text-shadow: none;
+    line-height: 27px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 1;
+    position: absolute;
+    left: auto;
+    right: 8px;
+    top: 8px;
+    z-index: 1;
+    transition: all 0.3s;
+}
+.modal-content .close:hover{
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.close:focus{ outline: none; }
+.modal-body{ padding: 60px 40px 40px !important; }
+.modal-body .title{
+    color: #026fd4;
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 0 10px;
+}
+.modal-body .description{
+    color: #9A9EA9;
+    font-size: 16px;
+    margin: 0 0 20px;
+}
+.modal-body .form-group{
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+}
+.modal-body .input-icon{
+    color: #777;
+    font-size: 18px;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 20px;
+}
+.modal-body .form-control{
+    font-size: 17px;
+    height: 45px;
+    width: 100%;
+    padding: 6px 0 6px 50px;
+    margin: 0 auto;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    box-shadow: none;
+    outline: none;
+}
+.form-control::placeholder{
+    color: #AEAFB1;
+}
+.form-group.checkbox{
+    width: 130px;
+    margin-top: 0;
+    display: inline-block;
+}
+.form-group.checkbox label{
+    color: #9A9EA9;
+    font-weight: normal;
+}
+.form-group.checkbox input[type=checkbox]{
+    margin-left: 0;
+}
+.modal-body .forgot-pass{
+    color: #7F7FD5;
+    font-size: 13px;
+    text-align: right;
+    width: calc(100% - 135px);
+    margin: 2px 0;
+    display: inline-block;
+    vertical-align: top;
+    transition: all 0.3s ease 0s;
+}
+.forgot-pass:hover{
+    color: #9A9EA9;
+    text-decoration: underline;
+}
+.modal-content .modal-body .btn{
+    color: #fff;
+    background: linear-gradient(to right, #33a3ff, #0675cf, #4cd5ff);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 38px;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    border: none;
+    display: inline-block;
+    transition: all 0.6s ease 0s;
+}
+.modal-content .modal-body .btn:hover{
+    color: #fff;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.modal-content .modal-body .btn:focus{ outline: none; }
+@media only screen and (max-width: 480px){
+    .modal-dialog{ width: 95% !important; }
+    .modal-content .modal-body{
+        padding: 60px 20px 40px !important;
+    }
+}
+
+
+
+
+
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row text-light  bg " style="min-height: 60px;">
+            <div class=" col-sm-2  " style="min-width: 180px;">Contact:9336513189</div>
+            <div class=" col-sm-3 "> Email:harshgupta0373@gmail.com</div>
+            <div class="col-sm-3 "></div>
+            <div class="col-sm-1 ">Portal</div>
+            <div class="col-sm-1 " style="min-width: 100px;">Calender</div>
+            <div class="col-sm-1 bg2 text-light pe-2" > SUPPORT</div>
+            
+        </div>
+        <div class="row menu_wrapper  ">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary py-2 pt-2">
+                <div class="container-fluid">
+                    <a class="navbar-brand ml-3" href="#"> &nbsp;<img src="{% static 'images/logoc.png'%}" alt="img" height="50px" width="60px" id="logo1"/> &nbsp;<span id="heading">Nalnda </span> Open University</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav  mb-2 mb-lg-0 ">
+                            <li class="nav-item ms-5 ps-4 don ">
+                                <a class="nav-link active fs-5" aria-current="page" href="{% url 'nouapp:index'%}">Home</a>
+                            </li>
+                            <li class="nav-item ms-5 ps-4 dropdown don">
+                                <a class="nav-link dropdown-toggle fs-5 " data-bs-toggle="dropdown" href="#" data-bs-auto-close="outside">Pages</a>
+                                <ul class="dropdown-menu shadow">
+                                    <li><a href="{% url 'nouapp:aboutus' %}" class="dropdown-item ">About Us</a></li>
+                                    <li><a href="{% url 'nouapp:contactus' %}" class="dropdown-item ">Contact Us </a>
+                                    </li>
+                                    <li><a href="" class="dropdown-item ">Academics</a></li>
+                                    <li><a href="" class="dropdown-item">Gallery </a></li>
+                                    <li class="dropstart"><a class="dropdown-item dropdown-toggle" href="#"
+                                            data-bs-toggle="dropdown" >More </a>
+                                        <ul class="dropdown-menu shadow">
+                                            <li><a class="dropdown-item" href="#">menu one</a></li>
+                                            <li><a class="dropdown-item" href="#">menu two</a></li>
+                                            <li><a class="dropdown-item" href="#">menu three</a></li>
+
+                                        </ul>
+
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item ms-5 ps-4 don">
+                                <a class="nav-link fs-5" href="{% url 'nouapp:registration' %}">Registration</a>
+                            </li>
+                            <li class="nav-item ms-5 ps-4 don">
+                                <a class="nav-link fs-5" href="{% url 'nouapp:login' %}" data-target="#myModal" data-toggle="modal">Login</a>
+                            </li>
+                            <li class="nav-item ps-5 ms-4 dropdown dropdown-mega position-static ">
+                                <a class="nav-link dropdown-toggle fs-5 don2" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false" href=""
+                                    data-bs-auto-close="outside">Programs</a>
+                                <div class="dropdown-menu shadow">
+                                    <div class="mega-content px-md-4">
+                                        <div class="container-fluid">
+                                            <div class="row ">
+                                                <div class="col-lg-4 col-sm-6 py-4 px-xl-5 px-4">
+                                                    <h4>Programs</h4>
+                                                    <div class="list-group">
+                                                        <a class="list-group-item" href="">Art and engineer</a>
+                                                        <a class="list-group-item" href="">Engineering</a>
+                                                        <a class="list-group-item" href="">Medicine</a>
+                                                        <a class="list-group-item" href="">School of law</a>
+                                                        <a class="list-group-item" href="">harsuu don</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-sm-6 py-4 px-xl-5 px-4">
+                                                    <h4>Programs</h4>
+                                                    <div class="list-group">
+                                                        <a class="list-group-item" href="">Art and engineer</a>
+                                                        <a class="list-group-item" href="">Engineering</a>
+                                                        <a class="list-group-item" href="">Medicine</a>
+                                                        <a class="list-group-item" href="">School of law</a>
+                                                        <a class="list-group-item" href="">harsuu don</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-sm-6 py-4 px-xl-5 px-xl-4">
+                                                    <h4>Programs</h4>
+                                                    <div class="list-group">
+                                                        <a class="list-group-item" href="">Art and engineer</a>
+                                                        <a class="list-group-item" href="">Engineering</a>
+                                                        <a class="list-group-item" href="">Medicine</a>
+                                                        <a class="list-group-item" href="">School of law</a>
+                                                        <a class="list-group-item" href="">harsuu don</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                       
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="modal-box">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-lg "  >
+                      Login Form
+                    </button>
+     
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content clearfix">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <div class="modal-body">
+                                    <h3 class="title">Login Form</h3>
+                                    <p class="description">Login here Using Email & Password</p>
+                                    <div class="form-group">
+                                        <span class="input-icon"><i class="fa fa-user"></i></span>
+                                        <input type="email" class="form-control" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="input-icon"><i class="fas fa-key"></i></span>
+                                        <input type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group checkbox">
+                                        <input type="checkbox">
+                                        <label>Remamber me</label>
+                                    </div>
+                                    <a href="" class="forgot-pass">Forgot Password?</a>
+                                    <button class="btn">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+
+
+
+
+
+        <div class="row" style="min-width: 100%;">
+            <div id="carouselExampleAutoplaying" class="carousel slide   " data-bs-ride="carousel"
+                style="min-width: 100%;">
+                <div class="carousel-inner" style="min-width: 100%;">
+                    <div class="carousel-item active ">
+                        <img src="{% static 'images/col2.jpg'%}" class="d-block  img-fluid" alt="..." height="500px" >
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/lib.jpg'%}" class="d-block w-100 img-fluid" alt="..." height="600px">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/col1.jpg'%}" class="d-block w-100 img-fluid" alt="..." height="500px">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="row dp-inline mt-4 text-center two ">
+            <div class="col-lg-3"><span  class="one">University Life</span> <p>Overall in here</p>
+
+            </div>
+            <div class="col-lg-3"><span class="one" >Gradution</span>
+                <p>Getting Diploma</p>
+            </div>
+            <div class="col-lg-3"><span  class="one">Athelitcs</span>
+                <p>Sport Club</p>
+            </div>
+            <div class="col-lg-3"> <span  class="one">Social</span>
+                <p>Overall in here</p>
+            </div>
+        </div>
+        
+
+        <div class="container-fluid mt-3 px-5 ">
+            <div class="row p-0">
+                <div class="col-6 p-0  bg_2 " style="min-height:300px; min-width: 400px;" ><img src="{% static 'images/p1.png'%}" alt="" width="100%" ></div>
+                <div class=" col-6 p-0 bg-light  bg_1 " style="min-height:300px; min-width: 400px;"><a href="#"><img src="{% static 'images/p7.png'%}" alt=""  width="100%" ></a></div>
+            </div>
+
+
+        </div>  
+        <div class="container-fluid m-0 p-0 mt-5"> 
+            <div class="row bg_4  ">hii</div>
+        </div>  
+        <div class="row mt-5 ">
+            <div class="col-3 " style="min-width: 260px;">
+                <div class="card container-fluid" >
+                    <img src="{% static 'images/p14.jpg'%}" class="card-img-top " alt="..." height="250" width="250">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        Sh. Rajendra Vishwanath Arlekar</h5>
+                      <p class="card-text">CHANCELLOR</p>
+                      <a href="#" class="btn btn-success ms-5">See Profile</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-3" style="min-width: 260px;">
+                <div class="card container-fluid" >
+                    <img src="{% static 'images/krishna.jpg'%}" class="card-img-top " alt="..." height="250" width="250">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        Prof.(Dr.)Krishna Chandra Sinha</h5>
+                      <p class="card-text">VICE CHANCELLOR</p>
+                      <a href="#" class="btn btn-success ms-5">See Profile</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-3" style="min-width: 260px;">
+                <div class="card container-fluid" >
+                    <img src="{% static 'images/habibur.jpg'%}" class="card-img-top" alt="..." height="250" width="250">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        Dr. Mohammad Habibur Rahman</h5>
+                      <p class="card-text">  REGISTRAR</p>
+                      <a href="#" class="btn btn-success ms-5">See Profile</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-3" style="min-width: 260px;">
+                <div class="card container-fluid" >
+                    <img src="{% static 'images/neelam.jpg'%}" class="card-img-top " alt="..." height="250" width="250" >
+                    <div class="card-body">
+                      <h5 class="card-title">
+                       Dr. Neelam Kumari  </h5>
+                      <p class="card-text">REGISTRAR (Exam)</p><br>
+                      <a href="#" class="btn btn-success" style="margin-left: 25%;">See Profile</a>
+                    </div>
+                  </div>
+
+            
+            </div>
+
+
+
+        </div>
+        <div class="row mt-5  ">
+            
+        
+            <div class="col-sm-3  " style=" background-color:#203045; min-height:450px; min-width: 250px;">
+                <div class="m-4 text-light"><h4>QuickLinks</h4>
+                    <div class="container-fluid" style="min-width: 250px;">
+                    <ul type="none" class="list-group" >
+                        <li class="mt-3 bold" >Registration</li>
+                        <li class="mt-3  bold">Login</li>
+                        <li class="mt-3 bold">Gallery</li>
+                        <li class="mt-3 bold">Acedamics</li>
+                        <li class="mt-3 bold">Coarses & fees</li>
+
+                    </ul>
+                    </div>
+                
+                
+                
+                </div>
+            
+            </div>
+
+        
+            
+            <div class="col-sm-9" style=" background-color:white; min-height:450px;">
+               
+                    {% block main %}
+                
+ 
+
+                    {% endblock main %}
+        
+            </div>
+        </div>
+        {% block main2 %}
+
+        
+
+
+
+        {%  endblock main2 %}
+        <div class=" container-fluid p-0  pb-5">
+
+            <div class="row pt-4 px-4 bg-light"> 
+                <div  class="col-2 text-primary"> <h4>Alumani Events</h4>
+                    <p class="text-success">view all event</p>
+                
+                
+                </div>
+                <div class="col-9 bg-secondary mt-3 ms-3" style="height: 1px;"> </div>
+            </div>
+            <div class="row ps-3 bg-light">
+                <div  class="col-4" style="min-height: 150px; min-width: 300px;">
+                    <div class="row"><img src="{% static 'images/gal6.png'%}" alt="" width="300"  class="img-fluid"></div>
+                    <div class="row mt-3">
+                        <div class="col-2"><b class="fs-2" style="color: #50bd77;">17</b>
+                            <b class="fs-5">Dec</b>
+                        </div>
+                        <div class="col-10">
+                            <div class="row"><h5>Fintech & Key Investment Conference</h5></div>
+                            <div class="row"><p class="text-success">1:00 pm - 1:00 pm <br>
+                                Kingster Grand Hall</p></div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div  class="col-4" style="min-height: 185px; min-width: 300px;">
+                    <div class="row"><img src="{% static 'images/gal5.png'%}" alt="" width="300" class="img-fluid"></div>
+                    <div class="row mt-3">
+                        <div class="col-2"><b class="fs-2" style="color: #50bd77;">17</b>
+                            <b class="fs-5">Dec</b>
+                        </div>
+                        <div class="col-10">
+                            <div class="row"><h5>Sport Management Information Webinar</h5></div>
+                            <div class="row"><p class="text-success">1:00 pm - 1:00 pm <br>
+                                Kingster Grand Hall</p></div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div  class="col-4" style="min-height: 185px; min-width: 300px;">
+                    <div class="row"><img src="{% static 'images/gal4.png'%}" alt="" width="300" class="img-fluid"></div>
+                    <div class="row mt-3">
+                        <div class="col-2"><b class="fs-2" style="color: #50bd77;">17</b>
+                            <b class="fs-5">Dec</b>
+                        </div>
+                        <div class="col-10 ">
+                            <div class="row"><h5>Planning and Facilitating Effective Meetings</h5></div>
+                            
+                            <div class="row"> <p class="text-success">8:00 am - 8:00 am <br>
+                                Kingster Grand Hall</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+
+
+        </div>
+        <div class="row text-light text-center" style="background-color: #1b2434; min-height: 200px; line-height:200px; font-size: 19px; font-weight: 500;">
+            <div class="col-2 mx-3 ">EUROPA EXPRESS</div>
+            <div class="col-2 mx-3">KEY VISION</div>
+            <div class="col-2 mx-3">Aziz Bank</div>
+            <div class="col-2 mx-3 ">Credit Anglio</div>
+            <div class="col-2 mx-2">Z|A|B</div>
+        </div>
+
+
+        <div class="row ">
+            <div class="col-sm-4 " style="min-height: 300px; background-color: #181818;">
+                <div class="p-4 mt-2 ms-2 text-light"><span class="mx-2"><img src="{% static 'images/logoc.png'%}" alt="img" height="50px" width="60px" id="logo1"/></span><b class="" style="font-size: 20px; color:#ffffff">Nalnda Open University</b> 
+                    <p class="pt-2" style="color: #8d8d8d;">Box 35300
+                    1810 Campus Way NE <br>
+                    Bothell, WA 98011-8246</p> 
+                    <p>+1-2534-4456-345</p> 
+                    <p">admin@kingsteruni.edu</p>
+                    <div class="col-10 bg-success" style="height: 1px; "> </div>
+                
+                
+                </div>
+            
+            
+            
+            
+            </div>
+            <div class="col-sm-4" style="min-height: 300px; background-color: #181818;">
+                    <div class="p-4 mt-2 ms-2 text-light"><span class="mx-2"><b style="font-size: 20px; color:#ffffff">Campus Life</b>
+                        <div class="col-10 bg-success mt-3 mb-3" style="height: 1px; "> </div>
+                        <ul type="none" class="mt-3 list-group text-light donu">
+                            <li class="mt-2">Acedemic</li>
+                            <li class="mt-2">Planning & Administration </li>
+                               <li class="mt-2"> Campus Safety </li>
+                                <li class="mt-2">Office of the Chancellor </li>
+                                <li class="mt-2">Facility Services </li>
+                                <li class="mt-2">Human Resources</li>
+                        </ul>
+                        
+                    </div>
+            
+            </div>
+
+
+
+            <div class="col-sm-4" style="min-height: 300px; background-color: #181818;">
+                <div class="p-4 mt-2 ms-2 text-light"><span class="mx-2"> <b style="font-size: 20px; color:#ffffff">Our Campus</b>
+                    <div class="col-10 bg-success mt-3 mb-3" style="height: 1px; "> </div>
+                    <ul type="none" class="mt-3 list-group text-light donu">
+                        <li class="mt-2">Accessibility </li>
+                        <li class="mt-2">Financial Aid </li>
+                           <li class="mt-2"> Food Services </li>
+                            <li class="mt-2">Housing </li>
+                            <li class="mt-2">Information Technologies </li>
+                            <li class="mt-2">Student Life</li>
+                    </ul>
+                    
+                </div>
+        
+            
+            
+            
+            </div>
+        </div>
+        <div class="row " style="height:80px; background-color: #202020">  
+            <div class="col-4 mt-4 ms-5 text-light" style="min-width: 300px;">Copyright All Right Reserved 2018, GoodLayers</div>
+            <div class="col-5"></div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+
+   
+
+
+</body>
+
+</html>

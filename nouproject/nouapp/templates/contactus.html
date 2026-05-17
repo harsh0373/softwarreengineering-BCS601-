@@ -1,0 +1,401 @@
+{% extends "parent2.html" %}
+{% load static %}
+{% block main3 %}
+{% if messages %}
+{% for msg in messages %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Hey bro!</strong> {{msg}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+{% endif %}
+
+<style>
+  div button:hover {
+    color: #3db166;
+    border: 4px solid #192f59;
+    font-weight: bold;
+  }
+</style>
+<div class="container-fluid m-0 p-0" style="position: relative;">
+  <div class="row"><img src="{% static 'images/us.png' %}" alt="" width="100%" style="padding: 0px;"> </div>
+
+  <div class="row " style="position: absolute; top: 85%;left:2.7% ;">
+    <div class="col-5 p-5 bg-light" style="width: 586px; height: 300px;">
+      <div class="row px-4"><b>Talk to Support</b></div>
+      <div class="row p-4">
+        <p>Interested in take admission in nalnda university ? Just pick up the phone to chat with a member.</p>
+      </div>
+      <div class="row px-4"><b>+1 857 829 5060</b></div>
+    </div>
+
+
+    <div class="col-5 p-5  bg-light" style="width: 586px; height: 300px;margin-left: 21px;">
+      <div class="row px-4"><b>Contact Customer Support</b></div>
+      <div class="row p-4">
+        <p>Sometimes you need a little help from your friends. Or a HubSpot support rep. Don’t worry… we’re here for
+          you.</p>
+      </div>
+      <div class="row px-4"><b>Nalanda@hostmail.com</b></div>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<div class="container-fluid" style="margin-top: 270px;">
+  <div class="container-fluid" style="min-height: 450px;">
+
+    <div class="row text-center"><b style="font-size: 50px;">We’d love to hear from you</b></div>
+    <div class="row text-center">
+      <p>Whether you’re curious about features, a free trial, or even press—we’re ready to answer any and all questions.
+      </p>
+    </div>
+    <div class="row mt-4" style="height: 50vh;">
+      <div class="col-3 p-4">
+        <div class="row px-3">
+          <h3>Feedback</h3>
+        </div>
+        <div class="row px-3" style="height: 25vh;">
+          <p>Wondering if Unbounce is the right tool for your business? Chat with our team to see if there’s a fit.</p>
+        </div>
+        <div class="row px-4" style="height: 60px;"><button>Get in Touch</button></div>
+
+
+      </div>
+      <div class="col-3 p-4">
+        <div class="row px-3">
+          <h3>Support</h3>
+        </div>
+        <div class="row px-3 " style="height: 25vh;">
+          <p>Need a hand using Unbounce or managing your account? Chat with a real, live human or self-serve using our
+            Help Center.
+
+          </p>
+        </div>
+        <div class="row px-4" style="height: 60px;"><button>Get in Touch</button></div>
+
+
+
+      </div>
+      <div class="col-3 p-4" style="height: 100vh;">
+
+        <div class="row px-3">
+          <h3>Help</h3>
+        </div>
+        <div class="row px-3" style="height: 25vh;">
+          <p>We love working with journalists to share compelling stories. Send us a note and our PR and Communications
+            Manager will be in touch.</p>
+        </div>
+        <div class="row px-4" style="height: 60px;"><button>Get Support</button></div>
+
+
+
+      </div>
+      <div class="col-3 p-4">
+
+        <div class="row px-3">
+          <h3>Partnerships</h3>
+        </div>
+        <div class="row px-3" style="height: 25vh;">
+          <p>We’re into co-marketing with awesome brands. Fill out the form here, and our Partnerships Manager will
+            circle back.</p>
+        </div>
+        <div class="row px-4" style="height: 60px;"><button>Let's chat</button></div>
+
+
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<div class="container-fluid m-0 p-0 pb-5 text-center ">
+  <div class="row  py-5" style="height: 40vh ;min-height: 200px;">
+    <div class="text-center">
+      <p style="font-size: 50px;"> Our Contact Informations</p>
+      <p>Whether you’re curious about features, a free trial, or even press—we’re ready to answer any and all questions.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5">
+      <div class="row">
+        <div class="container mt-4"><b class="fs-2 px-4"><i class="fa-solid fa-phone"></i></b></div>
+        <div class="container mt-2"> <b class="px-4">Phone</b></div>
+        <div class="container mt-3 ">
+          <p class="px-5" style="font-size: 13px;">A wonderful serenity has taken <br> possession of my entire soul,
+            like these.</p>
+        </div>
+        <div class="container fs-6">
+          <p class="px-4" style="color: #38a55e;">+1-2345-2345</p>
+        </div>
+
+      </div>
+      <div class="row mt-3">
+        <div class="container mt-4 "><b class="fs-2 px-4"><i class="fa-regular fa-envelope"></i></b></div>
+        <div class="container mt-2 "><b class="px-4">Email</b></div>
+        <div class="container mt-3 ">
+          <p class="px-5" style="font-size: 13px;">A wonderful serenity has taken <br> possession of my entire soul,
+            like these.</p>
+        </div>
+        <div class="container fs-6">
+          <p class="px-4" style="color: #38a55e;">Contac@nalnda.com</p>
+        </div>
+
+      </div>
+      <div class="row mt-3">
+        <div class="container mt-4"><b class="fs-2  px-4"><i class="fa-solid fa-location-dot"></i></b></div>
+        <div class="container mt-2"><b class="px-4">Location</b></div>
+        <div class="container mt-3">
+          <p class="px-5" style="font-size: 13px;">4 apt. Flawing Street. The Grand <br> Avenue.
+            Liverpool, UK 33342</p>
+        </div>
+        <div class="container fs-6">
+          <p class="px-4" style="color: #38a55e;">View On Googlemap</p>
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+
+    <div class="col-7 ">
+      <form class="form-group login-form" id="frmenquiry" onsubmit="event.preventDefault();validate();" method="post" action="{% url 'nouapp:contactus' %}">
+        {% csrf_token %}
+       
+                <div class="form-ontrol">
+                   
+                    <input type="text" name="name" placeholder="Enter Your Name" id="name"/>
+                   
+               </div>
+                
+                    <div class="form-ontrol">
+                       <div class="row">
+                        <div class="col-sm-3">Gender</div>
+                          <div class="col-sm-1 ml-5" > <input type="radio" name="gender" value="Male" /></div><div class="col-sm-1">Male</div>
+                         
+                           <div class="col-sm-1"> <input type="radio" name="gender" value="Female" /></div><div class="col-sm-1">Female</div>
+                       </div>
+                    </div>
+                    <div class="form-ontrol">
+                       <p class=" fs-3">Enter Your Address</p>
+                    <textarea name="address" placeholder="Eneter Your address" class="textarea"> </textarea>
+                    </div>
+                
+                    <div class="form-ontrol">
+                    <input type="number" name="number"  id="contactno" placeholder="Enter Contact No"/>
+                    </div>
+                    <div class="form-ontrol">
+                    <input type="text" name="emailaddress"  id="emailaddress" placeholder="Enter Email Id "/>
+                    </div>
+                    <div class="form-ontrol">
+                       <p class=" fs-3">Write Your enquiry text</p>
+                   <textarea name="enquirytext" class="textarea" placeholder="Write Your enquiry text" style="min-height:100px;"> </textarea>
+                    </div>
+                    <button type="submit" class="submit ">Submit</button>
+
+       </form>
+
+
+
+    </div>
+
+
+
+
+
+
+  </div>
+
+
+</div>
+
+
+
+
+<style>
+ 
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec img {
+    width: 50%;
+    max-width: 50%;
+}
+.login-container {
+    margin-top: 100px;
+    max-width: 450px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.separator {
+    width: 150px;
+    height: 4px;
+    background-color: #843bc7;
+    margin: 20px;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+input,select{
+
+    border: none;
+    outline: none;
+
+    font-size: 1.1em;
+}
+input,select{
+   
+    width: 100%;
+    background: #e6e6e6;
+    color: #333;
+    letter-spacing: 0.5px;
+    padding: 14px 64px; 
+}
+
+
+
+button.submit {
+    color: #fff;
+    padding: 14px 64px;
+    margin: 32px auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #8b33c5, #15a0e1);
+    cursor: pointer;
+    transition: opacity 0.4s;
+   
+    font-size: 1.1em;
+}
+
+button.submit:hover {
+    opacity: 0.3;
+}
+.form-ontrol{
+    margin-bottom: 25px;
+    display: block;
+    width: 80%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    margin-left: 50px;
+    
+   
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.textarea:focus{
+    border: 1px solid #333;
+    background-color: #fff;
+   
+}
+.form-ontrol input:focus{
+    border: 1px solid #333;
+    background-color: #fff;
+    color:black ;
+}
+@media (max-width: 780px) {
+
+  
+}
+.textarea{
+  
+  
+  padding:1em;
+  
+  
+  width:100%;
+}
+textarea ::placeholder{
+  color: black;
+}
+</style>
+<script>
+  function validate() {
+       
+        var name = document.getElementById('name');
+       
+        var contactno = document.getElementById('contactno');
+        var emailaddress = document.getElementById('emailaddress');
+        
+        var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+       
+       if (name.value == "" || name.value == null) {
+            alert("Please Enter Name");
+            name.focus();
+        }
+       
+        else if (contactno.value == "" || contactno.value == null) {
+            alert("Please Enter Contact NO");
+            contactno.focus();
+
+        }
+        else if (isNaN(contactno.value)) {
+            alert("Pleae Enter Numbers Only ");
+            contactno.focus();
+        }
+        else if (contactno.value.length != 10) {
+            alert("Please Enter Only 10 digits number");
+            contactno.focus();
+        }
+        else if (emailaddress.value == "" || emailaddress.value == null) {
+            alert("Please Enter the Email Address ");
+            emailaddress.focus();
+        }
+        else if (!emailexp.test(emailaddress.value)) {
+            alert("Invalid EmailAddress");
+            emailaddress.focus();
+        }
+        
+            document.getElementById('frmenquiry').submit();
+        }
+  
+
+    </script>
+
+
+
+
+
+
+
+
+
+{% endblock main3 %}

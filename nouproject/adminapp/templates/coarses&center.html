@@ -1,0 +1,85 @@
+{% extends "adminparent.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 style="text-align:center;">Manage Centers & Coarses</h1>   
+
+</div>
+</div>
+<div class="row">
+<div class="col-6 text-light" id="coarse">
+    <table cellpadding="6px 15px">
+        <tr>
+            <th>
+                Id#
+            </th>
+            <th>
+                Center
+            </th>
+            <th>
+                Delete Center
+            </th>
+        </tr>
+        {% for c in cntr %}
+        <tr class="text-light">
+            <td>{{forloop.counter}}</td>
+            <td >{{c.center}}</td>
+            <td ><a href="{% url 'adminapp:deletecenter' id_s=c.id_s  %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="col-6 text-light" id="coarse">
+    <table cellpadding="6px">
+        <tr>
+            <th>
+                Id#
+            </th>
+            <th>
+                Coarse
+            </th>
+            <th>
+                Delete Coarse
+            </th>
+        </tr>
+        {% for c in coarse %}
+        <tr class="text-light">
+            <td>{{forloop.counter}}</td>
+            <td >{{c.coarse}}</td>
+            <td ><a href="{% url 'adminapp:deletecoarse' id_s1=c.id_s1  %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+
+</div>
+<style>
+   
+</style>
+<script>
+
+    function block()
+        {
+        
+       var a= document.getElementById('coarses').innerHTML
+       if (a=='See Coarses')
+
+       {
+        document.getElementById('coarse').style.display="block";
+        document.getElementById('coarses').innerHTML="Hide Coarses"
+
+       }
+       else{
+        document.getElementById('coarse').style.display="none";
+        document.getElementById('coarses').innerHTML="See Coarses"
+       }
+        
+  
+
+
+        }
+    
+</script>
+{% endblock body %}

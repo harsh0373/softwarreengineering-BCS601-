@@ -1,0 +1,94 @@
+{% extends "studentparent.html" %}
+{% load static %}
+{% block body %}
+{% if messages %}
+{% for msg in messages %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Hey bro!</strong> {{msg}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+
+{% endif %}
+
+<h1 style="text-align:center; color:white; background-color: #192f59;">Post Your Question Here</h1>
+
+<div class="container  mt-4  " >
+    <div class="row ">
+        <div class="col-6">
+            
+            <img src="{% static 'images/bgimg.png' %}" alt="" height="350vh" width="450vh"></div>
+        <div class="col-6  bg-light">
+            <div class="btn-group px-2 ms-4 mt-3" style="height: 42px; width: 120px; " role="group" aria-label="Basic example">
+                <button type="button " class="btn btn-danger fs-5 p-1">Questions</button>
+                <button type="button" class="btn btn-warning fs-5 p-1">Answers</button>
+                <button type="button" class="btn btn-dark fs-5 p-1">Discussion</button>
+              </div>
+            <form action="{% url 'studentapp:postquestion' %}" class="form-group bg-light mt-5" method="post">
+                {% csrf_token %}
+               
+                <table class="table bg-light text-dark shadow rounded" style="width: 90%; margin: 0 auto;">
+                    <tr>
+                        <td class="fs-6">Enter Your Question</td>
+                        <td>
+                            <textarea name="question" id="" cols="" rows="" placeholder="Write your question here" class="form-control bg-light text-primary" style="height: 16vh;" required></textarea>
+                           
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td> <button class="btn btn-outline-light px-3 fs-6" style="background-color:  #192f59;;"
+                                type="submit">Post</button></td>
+                    </tr>
+
+
+                </table>
+
+            </form>
+           
+
+        </div>
+        <div class="row mt-2">
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th>Q#</th>
+                    <th>Question</th>
+                    <th>Posted By</th>
+                    <th>Posted Date</th>
+                    <th>Post Answers</th>
+                    <th>View Answer</th>
+                </tr>
+                
+                {% for q in ques %}
+                <tr>
+                 <td>{{q.qid}}</td>
+                 <td>{{q.question}}</td>
+                 <td>{{q.postedby}}</td>
+                 <td>{{q.posteddate}}</td>
+                 <td class="text-center"><a href="{% url 'studentapp:postanswer' qid=q.qid %}"><button class="btn btn-success">Post</button></a></td>
+                 <td class="text-center"><a href="{% url 'studentapp:viewanswer' qid=q.qid %}"><button class="btn btn-primary">View</button></a></td>
+                </tr>
+                 
+                {% endfor %}
+                
+
+
+
+            </table>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+</div>
+{% endblock body %}

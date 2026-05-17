@@ -1,0 +1,138 @@
+{% extends "parent2.html" %}
+{% load static %}
+{% block main3  %}
+<style>
+    @media(max-width:1000px) {
+        .news{
+            justify-content: center;
+            margin: auto;
+            width: 100%;
+
+
+        }
+
+        
+    }
+</style>
+<div class=" container-fluid p-0">
+
+    <div class="row px-4 bg-light"> 
+        <div  class="col-2 text-primary"> <h4>News & Updates</h4>
+            <p class="text-success">Read All news</p>
+        
+        
+        </div>
+        <div class="col-9 bg-secondary mt-3 ms-3" style="height: 1px;"> </div>
+    </div>
+    <div class="row ps-3 bg-light ">
+        <div  class="col-4 news" style="min-height: 150px; min-width: 300px;">
+            <div class="row"><img src="{% static 'images/gal3.png'%}" alt="" width="300"  class="img-fluid"></div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="row"><h5>Professor Albert joint research on mobile money in Tanzania</h5></div>
+                    <div class="row"><p class="text-success">1:00 pm - 1:00 pm <br>
+                        Kingster Grand Hall</p></div>
+                    
+                </div>
+            </div>
+        </div>
+        <div  class="col-4 news" style="min-height: 185px; min-width: 300px;">
+            <div class="row"><img src="{% static 'images/gal2.png'%}" alt="" width="300" class="img-fluid"></div>
+            <div class="row mt-3">
+               
+                <div class="col-11">
+                    <div class="row"><h5>A Global MBA for the next generation of business leaders</h5></div>
+                    <div class="row"><p class="text-success">1:00 pm - 1:00 pm <br>
+                        Kingster Grand Hall</p></div>
+                    
+                </div>
+            </div>
+        </div> 
+        <div  class="col-4 news" style="min-height: 185px; min-width: 300px;">
+            <div class="row"><img src="{% static 'images/g1.png'%}" alt="" width="300" class="img-fluid"></div>
+            <div class="row mt-3">
+                <div class="col-11 ">
+                    <div class="row"><h5>Professor Tom comments on voluntary recalls by snack brands</div>
+                    
+                    <div class="row"> <p class="text-success">8:00 am - 8:00 am <br>
+                        Kingster Grand Hall</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class=" container-fluid p-0  pb-5">
+
+    <div class="row pt-4 px-4 bg-light"> 
+        <div  class="col-2 text-primary"> <h4>Alumani Events</h4>
+            <p class="text-success">view all event</p>
+        
+        
+        </div>
+        <div class="col-9 bg-secondary mt-3 ms-3" style="height: 1px;"> </div>
+    </div>
+    <div class="row ps-3 bg-light">
+        <div  class="col-4 news" style="min-height: 150px; min-width: 300px;">
+            <div class="row"><img src="{% static 'images/gal6.png'%}" alt="" width="300"  class="img-fluid"></div>
+            <div class="row mt-3">
+                <div class="col-2"><b class="fs-2" style="color: #50bd77;">17</b>
+                    <b class="fs-5">Dec</b>
+                </div>
+                <div class="col-10">
+                    <div class="row"><h5>Fintech & Key Investment Conference</h5></div>
+                    <div class="row"><p class="text-success">1:00 pm - 1:00 pm <br>
+                        Kingster Grand Hall</p></div>
+                    
+                </div>
+            </div>
+        </div>
+        <div  class="col-4 news" style="min-height: 185px; min-width: 300px;">
+            <div class="row"><img src="{% static 'images/gal5.png'%}" alt="" width="300" class="img-fluid"></div>
+            <div class="row mt-3">
+                <div class="col-2"><b class="fs-2" style="color: #50bd77;">17</b>
+                    <b class="fs-5">Dec</b>
+                </div>
+                <div class="col-10">
+                    <div class="row"><h5>Sport Management Information Webinar</h5></div>
+                    <div class="row"><p class="text-success">1:00 pm - 1:00 pm <br>
+                        Kingster Grand Hall</p></div>
+                    
+                </div>
+            </div>
+        </div>
+        <div  class="col-4 news" style="min-height: 185px; min-width: 300px;">
+            <div class="row"><img src="{% static 'images/gal4.png'%}" alt="" width="300" class="img-fluid"></div>
+            <div class="row mt-3">
+                <div class="col-2"><b class="fs-2" style="color: #50bd77;">17</b>
+                    <b class="fs-5">Dec</b>
+                </div>
+                <div class="col-10 ">
+                    <div class="row"><h5>Planning and Facilitating Effective Meetings</h5></div>
+                    
+                    <div class="row"> <p class="text-success">8:00 am - 8:00 am <br>
+                        Kingster Grand Hall</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+
+
+</div>
+
+
+{% endblock main3 %}

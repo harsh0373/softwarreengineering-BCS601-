@@ -1,0 +1,144 @@
+{% extends "parent.html" %}
+{% load static %}
+{% block main  %}  
+<style>
+    *{
+        position: relative;
+    }
+    @media (max-width:1000px) {
+        
+        .hh1{width:100%
+        }
+    }
+</style> 
+<div class="row mt-4">
+    <div class="col-sm-4 text-center ms-4"> <h3>News & Updates</h3>
+        Read All News
+    
+    </div>
+    <div class="col-sm-7 hr mt-3"></div>
+
+
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6 text-center"> 
+        <div class=""><img src="{% static 'images/p10.png'%}" alt="" height="200" width="300"></div>
+        <div class=" ">JUNE 6,2023 / ADMISSION,STUDENT<br>
+             <p class="mx-5" style="font-weight: bold; font-size: 17px; color: #4a4444;">Professor Albert joint research 
+                     on mobile money in Tanzania</p></div>
+        
+
+     </div>
+    <div class="col-lg-6">
+        <div class="row">  
+            <div class="col-sm-3"><img src="{% static 'images/p11.jpg'%}" alt="" height="70" width="70"></div>
+            <div class=" col-sm-9">JUNE 6, 2023 / LATEST,UPDATES
+                <p class="me-5" style="font-weight: bold; font-size: 14px; color: #4a4444;">A Global MBA for the next generation of business leaders</p>
+            </div>
+        </div>
+        <div class="row mt-2"> 
+            <div class="col-sm-3"><img src="{% static 'images/p12.jpg'%}" alt="" height="70" width="70"></div>
+            <div class=" col-sm-9">JUNE 6, 2023 / LATEST,UPDATES
+                <p class="me-5" style="font-weight: bold; font-size: 14px; color: #4a4444;">A Global MBA for the next generation of business leaders</p>
+            </div>
+            
+        </div>
+        <div class="row mt-2">  
+            <div class="col-sm-3"><img src="{% static 'images/p13.jpg'%}" alt="" height="70" width="70"></div>
+            <div class=" col-sm-9">JUNE 6, 2023 / LATEST,UPDATES
+                <p class="me-5" style="font-weight: bold; font-size: 14px; color: #4a4444;">A Global MBA for the next generation of business leaders</p>
+            </div>
+           
+        </div>
+    </div>    
+</div>
+<div class="row"> 
+    <div class="col-9"></div>
+    <div class="col-3"><a href="{% url 'nouapp:news' %}" class="btn btn-success">See More>></a></div></div>
+    
+
+
+            
+
+{% endblock main  %}
+{%  block main2  %}
+<div class="container-fluid">
+
+<div class="row" >
+    <div class="col-4 p-3" style="min-width: 300px; padding: 0px;" data-aos="fade-right">
+        <img src="{% static 'images/p12.png'%}" alt="" height="400"  id="demo1">
+
+    </div>  
+    <div class="col-8 mt-2  p-3 hh1" style="padding: 0px;" onload="btnclr()"> 
+        <div class="row" data-aos="fade-down">
+            <div class="col-sm-2 text-center"><a class="nav-link nav-item py-3  text-light" onclick="demo2()" id="btn1" style="background-color: #3db166 ;">Benefits</a></div>
+            <div class="col-sm-4 text-center" style="min-width: 150px;"><a  class="nav-link nav-item py-3  text-light" id="btn2" style="background-color: #3db166 ;" >Self Development</a></div>
+            <div class="col-sm-3 text-center"> <a  class="nav-link nav-item py-3  text-light" id="btn3" style="background-color: #3db166 ;">Spirituality</a></div>
+            <div class="col-sm-2 text-center"><a  class="nav-link nav-item  py-3 text-light" onclick="demo()" id="btn4" style="background-color: #3db166 ;">Alumni</a></div>
+            
+        </div>
+        <div class=" row m-0 p-0 py-3 rounded-2 px-4 mt-4" style="background-color: white; opacity: 0.8;" data-aos="fade-up">
+            <h5 class="mt-4" style="color:  #192f59; font-weight: bold;" id="btn5">Why Choose Nalnda</h5>
+            <p class="mt-2 text-dark " style=" font-weight: 500;" id="demo2">The Nalanda Open University is the only University in the State of Bihar meant
+                 for imparting learning exclusively through the system of distance education.
+                  The University was established in March, 1987 by an ordinance, promulgated
+                   by the Government of Bihar. Later, Nalanda Open University Act, 1995 was 
+                   passed by the Bihar Legislature, replacing the Ordinance, and the University 
+                   came under the authority and jurisdiction of the new Act automatically. 
+                   The University is named after the famous Nalanda University of Ancient India.</p>     
+        </div>
+
+        
+    
+    </div>
+
+
+
+</div>
+</div>
+
+
+<div class="row">
+    
+
+</div>
+
+<script>
+    function demo()
+    {
+        var text="To Provide educational opportunities to those who are unable to take up formal education and are still desirous to upgrade their educational qualifications and acquire knowledge in various fields of learning through To Provide educational opportunities to those who are unable to take up formal education and are still desirous to upgrade their educational qualifications and acquire knowledge in various fields of learning through the print medium (correspondence course), contact programmes, study centres and mass media  and are still desirous to upgrade their educational qualifications and acquire knowledge in various fields of learning through the print medium (correspondence course), contact programmes, study centres and massand are still desirous to upgrade their educational qualifications and acquire knowledge in various fields of learning through the print medium (correspondence course), contact programmes, study centres and mass"
+        document.querySelector("#demo2").innerHTML=text
+    }
+function demo2()
+{
+        var text2="The Nalanda Open University is the only University in the State of Bihar meant for imparting learning exclusively through the system of distance education. The University was established in March, 1987 by an ordinance, promulgated by the Government of Bihar. Later, Nalanda Open University Act, 1995 was passed by the Bihar Legislature, replacing the Ordinance, and the University came under the authority and jurisdiction of the new Act automatically. The University is named after the famous Nalanda University of Ancient India"
+        
+        document.querySelector("#demo2").innerHTML=text2
+
+    }
+    function btnclr()
+{ 
+   var bt2= document.getElementById('btn1').style.backgroundColor
+   var bt3=document.getElementById('btn2').style.backgroundColor
+
+   var bt5= document.getElementById('btn5').style.color
+   
+
+   document.getElementById('btn1').style.backgroundColor=bt5
+   document.getElementById('btn2').style.backgroundColor=bt5
+   document.getElementById('btn3').style.backgroundColor=bt5
+   document.getElementById('btn4').style.backgroundColor=bt5
+
+   
+   
+   document.getElementById('btn5').style.color=bt2
+   
+   
+
+}
+
+setInterval(btnclr,1000);
+
+
+</script>
+{%  endblock main2 %}

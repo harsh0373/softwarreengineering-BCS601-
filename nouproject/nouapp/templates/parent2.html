@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Gyan Pravah Portal</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/bootstrap.bundle.js'  %}"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+    <style>
+        .harsh3 {
+            background-color: #2b2b2b;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .footer-distributed .footer-icons a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            background-color: #33383b;
+            border-radius: 2px;
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 3px;
+            margin-bottom: 5px;
+        }
+
+        .footer-distributed .footer-icons a:hover {
+            background-color: #3F71EA;
+        }
+
+        p span {
+            display: block;
+            font-weight: bold;
+            font-size: 21px;
+            line-height: 2;
+
+        }
+
+
+        .anchor {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .social {
+            position: fixed;
+            top: 30%;
+        }
+
+        .social ul {
+            padding: 0px;
+            transform: translate(-270px, 0);
+        }
+
+        .social ul li {
+            margin: 0.5rem 5px;
+            background: #22AeBA;
+            width: 300px;
+            text-align: right;
+            padding: 10px;
+            border-radius: 0px 30px 30px 0px;
+            transition: all 1s;
+        }
+
+        .social ul li:hover {
+            transform: translate(110px, 0);
+            background: #444652;
+        }
+
+        .social ul li:hover a {
+            color: #000;
+        }
+
+        .social ul li:hover i {
+            color: #fff;
+            background: #000;
+            transform: rotate(360deg);
+            transition: all 1s;
+        }
+
+        .social ul li i {
+            margin-left: 10px;
+            color: #000;
+
+
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 20px;
+        }
+
+
+
+        .bg div:hover {
+            color: #45a06e;
+            ;
+            transition: 1s;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+
+        .bg div a:hover {
+
+            color: #45a06e;
+            ;
+
+
+
+
+        }
+    </style>
+</head>
+
+
+<body style="background-color: #ffffff;">
+
+
+
+    <div class="container-fluid">
+        <div class="row text-light  bg " style="min-height: 50px;">
+            <div class=" col-sm-2  " style="min-width: 180px;"><i class="fa-solid fa-phone-volume me-2"></i>Mob:
+                5426278919</div>
+            <div class=" col-sm-3 " style="min-width: 280px;"><i class="fa-solid fa-envelope"></i>
+                Email:Noue-gyan@gmail.com</div>
+            <div class="col-sm-3 "></div>
+            <div class="col-sm-1" style="min-width: 100px;"> <a class="ms-5"
+                    style="text-decoration: none; color:#96a2b5;;" href="#">Portal</a>
+            </div>
+            <div class="col-sm-2 row" style="min-width: 190px;">
+                <div class="col-12"><button type="button" class=""
+                        style="background-color: #192f59;  border: none; color: #96a2b5; font-weight: bold;"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="fa-solid fa-bell fs-4 ms-3"></i> Notifications
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-dark" id="exampleModalLabel">Important notification</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                {% for n in noti %}
+                                <div class="modal-body py-0 ">
+
+
+                                    <b class="fs-4 " style="color: #192f59;">{{n.notification}}</b>
+
+
+                                </div>
+                                {% endfor %}
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-1 bg2 text-light pe-2"> SUPPORT</div>
+
+        </div>
+        <div class="row sticky-top ">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+                <div class="container-fluid " id="don">
+                    <a class="navbar-brand ms-4 p-1 mt-1" href="#"> &nbsp;<img src="{% static 'images/logoc.png'%}"
+                            alt="img" height="40px" width="45px" id="logo1" /> &nbsp;<span id="heading">E-Gyan </span>
+                        Pravah
+                        Portal</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav   mb-lg-0 ms-3 ">
+                            <li class="nav-item ms-4 ps-4  don   ">
+                                <a class="nav-link active fs-5 marg" aria-current="page"
+                                    href="{% url 'nouapp:index'%}">Home</a>
+                            </li>
+                            <li class="nav-item ms-4 ps-4 dropdown don  ">
+                                <a class="nav-link dropdown-toggle fs-5  marg" data-bs-toggle="dropdown" href="#"
+                                    data-bs-auto-close="outside">Pages</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'nouapp:aboutus' %}" class="dropdown-item ">About Us</a></li>
+                                    <li><a href="{% url 'nouapp:contactus' %}" class="dropdown-item">Contact Us </a>
+                                    </li>
+                                    <li class=""><a href="{% url 'nouapp:acedimics'%}"
+                                            class="dropdown-item ">Acedemics</a></li>
+                                    <li><a href="{% url 'nouapp:gallery' %}" class="dropdown-item ">Gallery </a></li>
+                                    <li><a href="{% url 'nouapp:coarses' %}" class="dropdown-item ">Coarses & Center </a></li>
+                                    <li class="dropstart"><a class="dropdown-item dropdown-toggle" href="#"
+                                            data-bs-toggle="dropdown">More </a>
+                                        <ul class="dropdown-menu shadow">
+                                            <li><a class="dropdown-item" href="#">menu one</a></li>
+                                            <li><a class="dropdown-item" href="#">menu two</a></li>
+                                            <li><a class="dropdown-item" href="#">menu three</a></li>
+
+                                        </ul>
+
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item ms-4 ps-4 don ">
+                                <a class="nav-link fs-5 marg" href="{% url 'nouapp:registration' %}">Registration</a>
+                            </li>
+                            <li class="nav-item ms-4 ps-4 don">
+                                <a class="nav-link fs-5 marg" href="{% url 'nouapp:login' %}">Login</a>
+                            </li>
+                            <li class="nav-item ps-4 ms-4 don">
+                                <a class="nav-link fs-5 don2 marg"
+                                    href="{% url 'nouapp:resume' %}">Create Resume</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    {% block main3 %}
+
+
+
+
+
+
+
+    {% endblock main3 %}
+
+
+    </div>
+    <div class="container-fluid m-0  p-0">
+        <footer class="row m-0 p-0 harsh3">
+            <div class="row ">
+                <div class="col-4">
+
+                    <div class="p-4 mt-4 ms-2 text-light"><span class="mx-2"><img src="{% static 'images/logoc.png'%}"
+                                alt="img" height="50px" width="60px" id="logo1" /></span><b class=""
+                            style="font-size: 20px; color:#ffffff">Nalnda Open University</b>
+                        <p class="" style="color: #8d8d8d;">Box 35300
+                            1810 Campus Way NE <br>
+                            Bothell, WA 98011-8246</p>
+                        <p>+1-2534-4456-345</p>
+                        <p">admin@kingsteruni.edu</p>
+                            <div class="col-10 bg-success" style="height: 2px; "> </div>
+
+
+                    </div>
+                </div>
+                <div class="col-4 text-light p-4 mt-4 text-center">
+                    <div class="row m-0 p-0 ">
+
+                        <div class="footer-right p-3">
+                            <p class="footer-company-about p-2 " style="font-size: 14px;">
+                                <span class="mb-2">About Nalanda Open university</span>
+                                The University was established in March, 1987 by an ordinance, promulgated by the
+                                Government of Bihar. Later, Nalanda Open University Act, 1995 was passed by the Bihar
+                                Legislature, replacing the Ordinance,
+
+
+                            </p>
+                            <div class="footer-icons  fs-4">
+                                <a href="https://www.facebook.com/sunny.alex.3344"><i
+                                        class="fa-brands fa-facebook"></i></a>
+                                <a style="color: #bb3069;"
+                                    href="https://instagram.com/vipin_yadav246?igshid=YmMyMTA2M2Y="><i
+                                        class="fa-brands fa-instagram "></i></i></a>
+                                <a href="#" style="color: #3F71EA;"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"></a>
+                                <a href="https://youtu.be/UIwAoW6a4V4"><i style="color: blue;"
+                                        class="fa-brands fa-youtube text-danger"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mt-5  p-4">
+                    <ul class="social-icon">
+                        <li class="social-icon__item"><a class="social-icon__link" href="#">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a></li>
+                        <li class="social-icon__item"><a class="social-icon__link" href="#">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a></li>
+                        <li class="social-icon__item"><a class="social-icon__link" href="#">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a></li>
+                        <li class="social-icon__item"><a class="social-icon__link" href="#">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a></li>
+                    </ul>
+
+                    <ul class="menu">
+                        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <div class="row m-0 p-0" style="line-height:25px; background-color: #252526;justify-content: center;">
+        <div class="col-4 mt-4 ms-5 text-light" style="min-width: 300px;">Copyright All Right Reserved 2018,harshgupta
+
+        </div>
+        <div class="col-4 mt-"></div>
+        <div class="col-3 ms-5 mt-2">
+            <ul class="social-icon">
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

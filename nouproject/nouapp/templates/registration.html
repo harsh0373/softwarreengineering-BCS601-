@@ -1,0 +1,317 @@
+{% extends "parent2.html" %}
+{% load static %}
+{% block main3  %}
+{% if messages %}
+  {% for msg in messages %}
+
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Hey bro!</strong> {{msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  {%  endfor %}
+  
+
+{%  endif %}
+
+
+<div class="social">
+    <ul>
+        <li>
+            <a href="#" class="anchor">Facebook <i class="fa-brands fa-facebook"></i></a>
+        </li>
+        <li>
+            <a href="#" class="anchor">Instagram <i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+            <a href="#" class="anchor">Twitter <i class="fa-brands fa-twitter"></i></a>
+        </li>
+    </ul>
+</div>
+
+<div class="row " style="background-image: url('static/images/.jpg');background-repeat: no-repeat; background-size: cover; background-color:#192f59;">
+
+    <div class="col-sm-5 text-light" >
+        <center>
+        <h1 style="margin-top:100px;"> Dear Student!</h1>
+        <h5 style="margin-top:30px;">Fill Your Registration form<br/>and start journey with us</h5>
+        <h5 style="margin-top:30px;">To keep connected with us please<br/>register with your personal details</h5>
+        <h1 class="mt-5"><i class="fa-solid fa-angles-down"></i></h1>
+        <h3>For More Details</h3>
+        <a href="{% url 'nouapp:aboutus' %}"> <button class="btn px-5 mt-3"style="background-color:#3db166;">About_us</button></a>
+        </center>
+    </div>
+
+    <div class="col-sm-7 text-white " >
+        
+        <form action="{% url 'nouapp:registration' %}" method="post" class="row g-3 needs-validation" onsubmit="event.preventDefault(); validate();" id="frmregistration">
+            {% csrf_token %}
+    
+
+            <input type="hidden" name="page" value="registration"/>
+            
+            <div class="col-md-6 mt-5">
+                <label for="validationCustom01" class="form-label">Roll no:</label>
+                <input type="text" class="form-control" name="rollno" placeholder="Enter Roll No" required style="opacity: 0.8" id="rollno">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-5">
+                <label  class="form-label">Name:</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter Name" required style="opacity: 0.8" id="name">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label  class="form-label">Enter Father Name:</label>
+                <input type="text" class="form-control" name="fname" placeholder="Enter Father Name" required style="opacity: 0.8" id="fname">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Enter Mother Name:</label>
+                <input type="text" class="form-control" name="mname" placeholder="Enter Mother Name" required style="opacity: 0.8" id="mname">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label mb-3">Gender:</label>
+                <br/>
+                <input type="radio" name="gender" value="Male" class="form-check-input"/>&nbsp;&nbsp;Male
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="gender" value="Female" class="form-check-input"/>&nbsp;&nbsp;Female
+            </div>
+
+
+
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Program:</label>
+                <select class="form-select" aria-label="Default select example" name="program" style="opacity: 0.8">
+                    <option selected>--Select Program--</option>
+                    {% for p in program %}
+                    <option value="{{p.program}}">{{p.program}}</option>
+                    {% endfor %}
+
+                </select>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Branch:</label>
+                <select class="form-select"  aria-label="Default select example" name="branch" style="opacity: 0.8">
+                    <option selected>--Select Branch--</option>
+                    {% for b in branch %}
+                    <option value="{{b.branch}}">{{b.branch}}</option>
+                    {% endfor %}
+                </select>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Year:</label>
+                 <select class="form-select" aria-label="Default select example" name="year" style="opacity: 0.8">
+                    <option selected>--Select Year--</option>
+                    {% for y in year %}
+                    <option value="{{y.year}}">{{y.year}}</option>
+                    {% endfor %}
+                </select>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom02" class="form-label">Mobile No:</label>
+                <input type="number" class="form-control" id="contactno" name="contactno" placeholder="Enter  valid No" required style="opacity: 0.8">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustomUsername" class="form-label">Email:</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input type="email" id="emailaddress" class="form-control" name="emailaddress" aria-describedby="inputGroupPrepend"
+                           required style="opacity: 0.8">
+                    <div class="invalid-feedback">
+                        Please choose a username.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="validationCustom02" class="form-label">Enter Password:</label>
+                <input type="password" id="password" class="form-control" name="password" placeholder="Enter Password" required style="opacity: 0.8">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            
+             <div class="col-md-6">
+                <label for="validationCustom02" class="form-label">Re-Enter Password:</label>
+                <input type="password" id="cp" class="form-control" name="confirmpassword" placeholder="Re-Enter  Password" required style="opacity: 0.8">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <label for="validationCustom05" class="form-label">Address:</label>
+                <textarea name="address" id="address" class="form-control" placeholder="Enter Your Address" style="opacity: 0.8"></textarea>
+
+                <div class="invalid-feedback">
+                    Please provide a valid zip.
+                </div>
+            </div>
+
+
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-5">
+                <button class="btn  px-5" type="submit" style="background-color:#3db166;">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function validate() {
+        var rollno = document.getElementById('rollno');
+        var name = document.getElementById('name');
+        var fname = document.getElementById('fname');
+        var mname = document.getElementById('mname');
+        var contactno = document.getElementById('contactno');
+        var emailaddress = document.getElementById('emailaddress');
+        var password = document.getElementById('password');
+        var cp = document.getElementById('cp');
+        var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (rollno.value == "" || name.value == null || isNaN(rollno.value)) {
+            alert("Please  Valide Roll number");
+            name.focus();
+        }
+        else if (name.value == "" || name.value == null) {
+            alert("Please Enter Name");
+            name.focus();
+        }
+        else if (fname.value == "" || fname.value == null) {
+            alert("Please Enter Father Name");
+            name.focus();
+        }
+        else if (mname.value == "" || mname.value == null) {
+            alert("Please Enter Mother Name");
+            name.focus();
+        }
+        else if (contactno.value == "" || contactno.value == null) {
+            alert("Please Enter Contact NO");
+            contactno.focus();
+
+        }
+        else if (isNaN(contactno.value)) {
+            alert("Pleae Enter Numbers Only ");
+            contactno.focus();
+        }
+        else if (contactno.value.length != 10) {
+            alert("Please Enter Only 10 digits number");
+            contactno.focus();
+        }
+        else if (emailaddress.value == "" || emailaddress.value == null) {
+            alert("Please Enter the Email Address ");
+            emailaddress.focus();
+        }
+        else if (!emailexp.test(emailaddress.value)) {
+            alert("Invalid EmailAddress");
+            emailaddress.focus();
+        }
+        else if (password.value.length < 8 || password.value.length > 16) {
+            alert("please Write greater than 8 and less than 16");
+        }
+        else if (password.value != cp.value) {
+            alert("Passwor and confirm password are not Matched");
+            password.focus();
+        }
+        else {
+            document.getElementById('frmregistration').submit();
+        }
+    }
+
+    </script>
+    <style>
+         .anchor
+        {
+            color: #fff;
+            text-decoration:none;
+        }
+        .social
+        {
+            position: fixed;
+            top: 30%;
+        }
+        .social ul
+        {
+            padding: 0px;
+            transform: translate(-270px,0);
+        }
+        .social ul li
+        {
+            margin: 0.5rem 5px;
+            background: #22AeBA;
+            width: 300px;
+            text-align: right;
+            padding: 10px;
+            border-radius: 0px 30px 30px 0px;
+            transition: all 1s;
+        }
+        .social ul li:hover
+        {
+            transform: translate(110px,0);
+            background: #444652;
+        }
+        .social ul li:hover a
+        {
+            color: #000;
+        }
+        .social ul li:hover i
+        {
+            color: #fff;
+            background:#000;
+            transform: rotate(360deg);
+            transition: all 1s;
+        }
+        .social ul li i
+        {
+            margin-left: 10px;
+            color: #000;
+            
+            
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size:20px;
+        }
+
+
+
+    </style>
+
+{% endblock main3 %}

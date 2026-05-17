@@ -1,0 +1,89 @@
+{% extends "parent2.html" %}
+{% load static %}
+{% block main3 %}
+{% if messages %}
+{% for msg in messages %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Hey bro!</strong> {{msg}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+
+{% endif %}
+
+<div class="row login " style="padding: 0px; background-image:url(' static/images/bgimg.png');opacity: 0.95;" >
+  <div class="contain">
+    <div class="wrapp">
+      <div class="title"><span>Login Form</span></div>
+      <form action="{% url 'nouapp:login' %}" class="form-control" method="post" onsubmit="event.preventDefault();validate();" id="frmlogin">
+        {% csrf_token %}
+        <div class="roww">
+          <i class='bx bxs-user'></i>
+          <input type="text" placeholder="Roll No or User id"  name="userid" id="userid"/>
+        </div>
+        <div class="roww">
+          <i class='bx bxs-lock-alt'></i>
+          <input type="password" placeholder="Password" name="password"  id="password"/>
+        </div>
+        <div class="roww">
+          <i class='bx bxs-lock-alt'></i>
+          <select name="usertype">
+            <option selected>-Select User-</option>
+            <option value="Student">Student</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <div class="pass mt-2"><a href="#">Forgot Password?</a></div>
+        <div class="roww button">
+          <input type="submit" value=" Login">
+        </div>
+        <div class="signup-link">Not a member?<a href="{% url 'nouapp:registration' %}">Singup now</a></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function validate() {
+    var userid = document.getElementById("userid");
+    var password = document.getElementById("password");
+
+    if (userid.value == "" || userid.value == null) {
+      alert("Please Enter Userid")
+      userid.focus();
+
+
+    }
+
+    else if (password.value == "" || password.value == null) {
+      alert("Please Enter Password")
+      password.focus()
+
+
+    }
+    else {
+      document.getElementById("frmlogin").submit();
+
+
+
+    }
+
+
+
+  }
+
+
+
+
+
+</script>
+
+
+<link href="{% static 'css/login.css' %}" rel="stylesheet" />
+<link href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+{% endblock main3 %}

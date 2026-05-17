@@ -1,0 +1,189 @@
+{% extends "parent2.html" %}
+{% load static %}
+{% block main3  %}
+{% if messages %}
+  {% for msg in messages %}
+
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Hey bro!</strong> {{msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  {%  endfor %}
+  
+
+{%  endif %}
+
+
+
+
+
+<div class="row" style="min-width: 100%; background-color:#1b2434;">
+   
+    <div id="carouselExampleAutoplaying" class="carousel slide   " data-bs-ride="carousel"
+        style="min-width: 100%; padding: 0px;">
+        <div class="carousel-inner" style="min-width: 100%; padding: 0px;" >
+            <div class="carousel-item active "> 
+                <img src="{% static 'images/pp2.jpg'%}" class="d-block w-100 img-fluid" alt="..." height="500px ">
+            </div>
+            <div class="carousel-item" style="background-image: url(' static/images/pp3.jpg'); min-height: 700px; background-position: center;background-size: cover;">
+                <img src="{% static 'images/pp8.jpg'%}"  class="d-block w-100 img-fluid" alt="..." height="500px" >
+                <div class="carousel-caption d-none d-md-block text-white">
+                    <h3>Welcome To Nalnda Open University</h3>
+                    <p> Looking to build a website for your institution</p>
+                  </div>
+                
+               
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/pp4.jpg'%}" class="d-block w-100 img-fluid" alt="..." height="500px">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<div class="container-fluid m-0 p-0">
+    <div class="row p-3"
+        style=" background-image: url(static/images/bgimg.png);background-repeat: no-repeat;background-size: cover;">
+        <div class="col-sm"></div>
+       
+        <div class="col-sm-8 card shadow ">
+            <form action=""  method="post" class="form-group"
+                 style="width: 100%;">
+                {% csrf_token %}
+                <table class="table table-striped">
+                    <h3 style="color:rgb(108, 108, 218); font-size: 2.4rem;" class="text-center py-2">NEW REGISTRATION FORM
+                    </h3>
+                    <tr>
+                        <td>Enter Roll No</td>
+                        <td>
+                            <input type="text" placeholder="Enter Your Roll No" name="rollno" class="form-control"
+                                id="rollno" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Name</td>
+                        <td>
+                            <input type="text" name="name" class="form-control" placeholder="Enter Your Name"
+                                id="name" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Father's Name</td>
+                        <td>
+                            <input type="text" name="fname" class="form-control" placeholder="Enter Your Father's Name"
+                                id="fname" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Mother's Name</td>
+                        <td>
+                            <input type="text" name="mname" class="form-control" placeholder="Enter Your Mother's Name"
+                                id="mname" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Select Gender
+                        </td>
+                        <td>
+                            <input type="radio" class="form-check-input" value="Male" name="gender" /> Male
+                            <input type="radio" class="form-check-input" value="Female" name="gender" /> Female
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Address</td>
+                        <td>
+                            <textarea name="address" class="form-control"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Select Program</td>
+                        <td>
+                            <select class="form-control " name="program">
+                                <option selected>-- Select Program --</option>
+                                {% for p in program %}
+                                <option value="{{p.program}}">{{p.program}}</option>
+                                {% endfor %}
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Select Branch</td>
+                        <td>
+                            <select name="branch" class="form-control">
+                                <option selected>-Select Branch-</option>
+                                {% for b in branch %}
+                                <option value="{{b.branch}}">{{b.branch}}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Select Year</td>
+                        <td>
+                            <select name="year" class="form-control">
+                                <option selected>-Select Year-</option>
+                                {% for y in year %}
+                                <option value="{{y.year}}">{{y.year}}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Contact No</td>
+                        <td>
+                            <input type="number" name="contactno" placeholder="Enter Your Contact Number"
+                                class="form-control" id="contactno" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Email Address</td>
+                        <td>
+                            <input type="text" name="emailaddress" placeholder="Enter Your Email Address"
+                                class="form-control" id="emailaddress" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Password</td>
+                        <td>
+                            <input type="password" name="password" placeholder="Enter Your Password"
+                                class="form-control" id="password" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password</td>
+                        <td>
+                            <input type="password" name="password" placeholder="Confirm Password" class="form-control"
+                                id="cp" />
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="2">
+                            <button type="submit" class="btn btn-outline-primary form-control">Register</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+          
+
+{% endblock main3  %}

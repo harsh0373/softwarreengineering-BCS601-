@@ -1,0 +1,171 @@
+{% extends "studentparent.html" %}
+{% block body %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+    
+    .w {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f7fc;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 28px;
+        color: #333;
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .form-row .input-group {
+        width: 48%;
+    }
+
+    .input-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 4px;
+        margin: 20px;
+    }
+
+    .input-group p {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        }
+
+    .input-group p:empty {
+        color: #aaa;
+    }
+
+    .form-row .input-group.full-width {
+        width: 100%;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    .submit-btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+        .form-row {
+            flex-direction: column;
+        }
+
+        .form-row .input-group {
+            width: 100%;
+        }
+    }
+</style>
+
+    <div class="row ">
+        <h1 style="text-align:center;background-color: #192f59;color: white;" >Student Profile</h1>   
+        <div class="container w">
+            <h1>Student Information</h1>
+            <form>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="rollNo">Roll No</label> 
+                        <label for="">{{ stu.rollno }}</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="studentName">Student Name</label>
+                        <label>{{ stu.name }}<label>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="fatherName">Father Name</label>
+                        <label>{{ stu.fname }}</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="motherName">Mother Name</label>
+                        <label>{{ stu.mame }}</label>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="gender">Gender</label>
+                        <label>{{ stu.gender }}</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="program">Program</label>
+                        <label>{{ stu.program }}</label>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="branch">Branch</label>
+                        <label>{{ stu.branch }}</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="year">Year</label>
+                        <label>{{ stu.year }}</label>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="contactNumber">Contact Number</label>
+                        <label>{{ stu.contactno }}</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="address">Address</label>
+                        <label>{{ stu.address }}</label>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="input-group full-width">
+                        <label for="emailAddress">Email Address</label>
+                        <label>{{ stu.emailaddress }}</label>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="input-group full-width">
+                        <label for="registrationDate">Registration Date</label>
+                        <label>{{ stu.regdate }}</label>
+                    </div>
+                </div>
+    
+                <div class="button-container">
+                    <button type="button" class="submit-btn">Back</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock body %}

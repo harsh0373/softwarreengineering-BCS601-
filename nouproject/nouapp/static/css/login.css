@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+} 
+.contain{
+    max-width: 450px;
+    padding: 10px 20px;
+    margin: 120px auto;
+}
+.wrapp{
+   
+    background: #fff;
+    border-radius:5px;
+}
+.wrapp .title{
+    line-height:80px;
+    background:#192f59;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+.wrapp form{
+    padding: 30px 25px 25px 25px;
+}
+.wrapp form .roww{
+    height: 50px;
+    /* background: #ff0000; */
+    margin-bottom: 15px;
+    position: relative;
+}
+.wrapp form .roww input{
+    height:100%;
+    width:100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border:1px solid lightgrey;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.wrapp form  select{
+    height:100%;
+    width:100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border:1px solid lightgrey;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.wrapp form  option{
+    height:100%;
+    width:100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border:1px solid lightgrey;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+form .roww input:focus{
+    border-color: #16a085;
+    box-shadow: inset 0px 0px 2px 2px rgba(26, 188, 156, 0.25);  
+}
+.wrapp form .roww i{
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    color: #fff;
+    font-size: 18px;
+    background: #192f59;
+    border:1px solid #16a085;
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapp form .pass{
+    margin: -8px 0 20px 0;
+}
+.wrapp form .pass a{
+    color:#192f59;
+    font-size: 17px;
+    text-decoration: none;
+}
+.wrapp form .pass a:hover{
+    text-decoration: underline;
+}
+.wrapp form .button input{
+       color: #fff;
+       font-size: 20px;
+       font-weight: 500;
+       padding-left: 0px;
+       background:#192f59;
+       border: 1px solid #192f59;
+       cursor: pointer;
+}
+form .button input:hover{
+    background: #12876f;
+}
+
+.wrapp form .signup-link{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+}
+.wrapp form .signup-link a{
+    color: #192f59;
+    
+    text-decoration: none;
+}
+.wrapp form .signup-link a:hover{
+    text-decoration: underline;
+}
+.login{
+    height: 120vh;
+   
+background-color:#324b79;
+
+opacity:0.95;
+background-position: center;
+background-size: cover;
+
+
+
+}

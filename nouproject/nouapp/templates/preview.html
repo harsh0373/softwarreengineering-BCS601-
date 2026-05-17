@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOU E-Gyan portal</title>
+   
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <script>
+        $(function () {
+          var nua = navigator.userAgent
+          var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+          if (isAndroid) {
+            $('select.form-control').removeClass('form-control').css('width', '100%')
+          }
+        })
+        </script>
+
+</head>
+
+<body>
+   <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+        <div class="row bg-danger text-light">
+            <div class="col-sm-4">Contact No : 9336513189</div>
+            <div class="col-sm-4"> Email id: harshgupta0373@gmail.com</div>
+            <div class="col-sm-4">Follow Us : dvl_harsh</div>
+        </div>
+        <div class="row mt-2 ">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Nalnda Open University</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'nouapp:index'%}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'nouapp:aboutus'%}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'nouapp:registration'%}">Registration</a>
+                            </li>
+                            <li class="nav-item">
+                                 <a class="nav-link "  href="" data-target="#myModal" data-toggle="modal">Login</a> 
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'nouapp:contactus'%}">Contact Us</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="row mt-2">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{% static 'images/s1.jpg'%}" class="d-block w-100" alt="..."  height="450">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'images/s2.jpg'%}" class="d-block w-100" alt="..." height="450">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'images/s3.jpg'%}" class="d-block w-100" alt="..."  height="450">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-sm-4" style=" background-color:aqua; min-height:600px;"></div>
+            <div class="col-sm-8" style=" background-color:silver; min-height:600px;"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-sm-4" style="min-height: 250px; background-color: gray;"></div>
+            <div class="col-sm-4" style="min-height: 250px; background-color: burlywood;"></div>
+            <div class="col-sm-4" style="min-height: 250px; background-color: cadetblue;"></div>
+
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="modal-box">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-lg "  >
+                      Login Form
+                    </button>
+     
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content clearfix">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <div class="modal-body">
+                                    <h3 class="title">Login Form</h3>
+                                    <p class="description">Login here Using Email & Password</p>
+                                    <div class="form-group">
+                                        <span class="input-icon"><i class="fa fa-user"></i></span>
+                                        <input type="email" class="form-control" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group">
+                                        <span class="input-icon"><i class="fas fa-key"></i></span>
+                                        <input type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group checkbox">
+                                        <input type="checkbox">
+                                        <label>Remamber me</label>
+                                    </div>
+                                    <a href="" class="forgot-pass">Forgot Password?</a>
+                                    <button class="btn">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+</body>
+
+</html>

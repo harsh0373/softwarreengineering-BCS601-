@@ -1,0 +1,54 @@
+{% extends "studentparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-light" style="text-align:center;margin-bottom: 20px; background-color: #192f59;">Study Material</h1>
+            
+            <table class="table table-bordered text-center text-dark;">
+                <tr>
+                    <th class="text">A#</th>
+                    
+                   <th>Subject</th>
+                    
+                    <th>Filename</th>
+                    <th>File</th>
+
+                </tr>
+                <div class="container-fluid" style="display:flex; float: right;"></div>
+                {% for m in mt %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    
+                    <td>{{m.subject}}</td>
+                    <td>{{m.file_name}}</td>
+                    <td>
+                        <a target="_blank" download href="{{m.my_file.url}}">
+                        {{m.my_file}} </a>
+                    </td>
+                    
+                    
+                    <div class=" text-dark text-center px-3 mx-3 py-3 my-3 " style="float: left; border: 1px solid;">
+                        <h2 > A# --{{forloop.counter}}</h2>
+                        <h4>Subject--{{m.subject}}</h4>
+                        <h4>Filename--{{m.file_name}}</h4>
+                        <h4>Download--<a target="_blank" download href="{{m.my_file.url}}">
+                            {{m.my_file}} </a></h4>
+                       
+
+                    </div>
+                
+                
+                    
+        
+        
+                </tr>
+                {% endfor %}
+            </div>
+            </table>
+
+        
+        
+              
+        </div>
+    </div>
+{% endblock body %}

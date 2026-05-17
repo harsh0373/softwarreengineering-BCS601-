@@ -1,0 +1,65 @@
+{% extends "parent2.html" %}
+{% load static %}
+{% block main3 %}
+
+<div class="row">
+    <div class="col-sm-12 text-light p-2" style="background-color:#192f59 ;">
+        <h1 style="text-align:center;"> Centers & Coarses</h1>   
+
+</div>
+</div>
+<div class="row">
+<div class="col-5 text-light ms-4" id="coarse">
+    <table cellpadding="6px " class="table bordered">
+        <tr>
+            <th>#A</th>
+           
+            <th>
+               Our  Centers
+            </th>
+            <th>
+                
+             </th>
+            
+        </tr>
+        {% for c in cntr %}
+        <tr class="text-dark">
+            <td>{{forloop.counter}}</td>
+            <td >{{c.center}}</td>
+            <td ><a href="">Details</a></td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="col-1">
+
+</div>
+<div class="col-5 text-dark" id="coarse">
+    <table cellpadding="6px" class="table bordered">
+        <tr>
+            <th>#B</th>
+            
+            <th>
+               All  Coarses offered by Our Campus
+            </th>
+            
+        </tr>
+        {% for c in crse %}
+        <tr class="text-dark">
+            <td>{{forloop.counter}}</td>
+            <td >{{c.coarse}}</td>
+            <td ><a href="">Apply</a></td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+
+</div>
+
+
+
+{% endblock main3 %}
